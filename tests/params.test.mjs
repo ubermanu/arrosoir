@@ -23,4 +23,12 @@ test('Update params from URL string', () => {
   )
 })
 
+test('Test deconstruction from params object', () => {
+  const p = params('https://example.com/path?a=1&b=2&c=3')
+  const { a, b, c } = p
+  assert.equal(a, '1')
+  assert.equal(b, '2')
+  assert.equal(c, '3')
+})
+
 test.run()
