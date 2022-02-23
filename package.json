@@ -7,21 +7,23 @@
     "dom",
     "hydration"
   ],
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "ubermanu",
   "license": "MIT",
   "type": "module",
   "main": "dist/arrosoir.js",
   "module": "dist/arrosoir.es.js",
+  "types": "types/main.d.mts",
   "repository": "https://github.com/ubermanu/arrosoir",
   "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "rollup -c",
+    "build": "rollup -c && tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
     "examples": "php -S localhost:8000 -t examples",
     "test": "uvu tests"
   },
   "files": [
-    "dist/*"
+    "dist/*",
+    "types/*"
   ],
   "devDependencies": {
     "prettier": "^2.5.1",

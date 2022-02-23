@@ -1,0 +1,12 @@
+{
+  "include": [
+    "src/*.mjs"
+  ],
+  "compilerOptions": {
+    "removeComments": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "allowJs": true,
+    "outDir": "./types"
+  }
+}
