@@ -1,0 +1,35 @@
+{
+  "name": "arrosoir",
+  "description": "A function for basic DOM hydration",
+  "keywords": [
+    "arrosoir",
+    "hydrate",
+    "dom",
+    "hydration"
+  ],
+  "version": "0.1.0",
+  "author": "ubermanu",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/arrosoir.js",
+  "module": "dist/arrosoir.es.js",
+  "repository": "https://github.com/ubermanu/arrosoir",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "rollup": "^2.68.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/arrosoir.js",
+      "default": "./dist/arrosoir.js"
+    },
+    "./package.json": "./package.json"
+  }
+}
