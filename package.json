@@ -16,19 +16,22 @@
   "repository": "https://github.com/ubermanu/arrosoir",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "examples": "node examples/server.mjs",
+    "test": "uvu tests"
   },
   "files": [
     "dist/*"
   ],
   "devDependencies": {
     "prettier": "^2.5.1",
-    "rollup": "^2.68.0"
+    "rollup": "^2.68.0",
+    "uvu": "^0.5.3"
   },
   "exports": {
     ".": {
-      "import": "./dist/arrosoir.js",
-      "default": "./dist/arrosoir.js"
+      "require": "./dist/arrosoir.js",
+      "import": "./dist/arrosoir.es.js",
+      "default": "./dist/arrosoir.es.js"
     },
     "./package.json": "./package.json"
   }
