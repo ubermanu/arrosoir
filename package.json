@@ -17,7 +17,7 @@
   "scripts": {
     "build": "rollup -c",
     "prepublishOnly": "rollup -c",
-    "examples": "node examples/server.mjs",
+    "examples": "php -S localhost:8000 -t examples",
     "test": "uvu tests"
   },
   "files": [

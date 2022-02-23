@@ -1,13 +1,27 @@
+const parser = new DOMParser()
+
+/**
+ * Fetch the HTML from the given URL and hydrate the given element with it.
+ *
+ * @param {string} selector
+ * @param {string} url
+ * @param {{merge?:boolean, history?:boolean}} options
+ * @return {Promise<void>}
+ */
 export default async (selector, url, options = {}) => {
   const element = document.querySelector(selector)
+
   const response = await fetch(url)
-  const html = await response.text()
+  const doc = parser.parseFromString(await response.text(), 'text/html')
+  const content = doc.querySelector(selector).innerHTML
 
-  // TODO: Find the content
+  if (options.merge) {
+    element.innerHTML += content
+  } else {
+    element.innerHTML = content
+  }
 
-  element.innerHTML = html
-
-  // if (options.merge) {
-  //
-  // }
+  if (options.history) {
+    history.pushState({}, '', url)
+  }
 }
