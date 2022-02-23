@@ -21,13 +21,11 @@ For example:
 <script type="module">
     import { hydrate, params } from 'https://cdn.skypack.dev/arrosoir'
 
-    const button = document.querySelector('button.load-more');
-
     const search = params(location.href)
     search.l ??= 10
     search.p ??= 0
 
-    button.addEventListener('click', async () => {
+    document.querySelector('button.load-more').addEventListener('click', async () => {
         search.p++
         await hydrate('ul.list', search.apply(location.href), { merge: true })
     })
