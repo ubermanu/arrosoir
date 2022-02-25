@@ -5,7 +5,7 @@ const parser = new DOMParser()
  *
  * @param {string} selector
  * @param {string} url
- * @param {{merge?:boolean, history?:boolean}} options
+ * @param {{merge?:string, history?:boolean}} options
  * @return {Promise<void>}
  */
 export default async (selector, url, options = {}) => {
@@ -16,7 +16,16 @@ export default async (selector, url, options = {}) => {
   const content = doc.querySelector(selector).innerHTML
 
   if (options.merge) {
-    element.innerHTML += content
+    switch (options.merge) {
+      case 'prepend':
+      case 'before':
+        element.innerHTML = content + element.innerHTML
+        break
+      case 'append':
+      case 'after':
+      default:
+        element.innerHTML += content
+    }
   } else {
     element.innerHTML = content
   }
