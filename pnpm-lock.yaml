@@ -1,14 +1,14 @@
 lockfileVersion: 5.3
 
 specifiers:
-  jhj: ^0.6.0
+  jhj: ^0.6.1
   prettier: ^2.5.1
   rollup: ^2.68.0
   rollup-plugin-terser: ^7.0.2
   uvu: ^0.5.3
 
 devDependencies:
-  jhj: 0.6.0
+  jhj: 0.6.1
   prettier: 2.5.1
   rollup: 2.68.0
   rollup-plugin-terser: 7.0.2_rollup@2.68.0
@@ -743,8 +743,8 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /jhj/0.6.0:
-    resolution: {integrity: sha512-JzYeG2Jax4O4uhkEO1eIAgNfz9pChRf8EJjm8Og+VN48Y1CAQS3WeZKYlOv+9ODJELa8M3TXfVkRJvNJjbySUw==}
+  /jhj/0.6.1:
+    resolution: {integrity: sha512-fw2iTombRon/7cBc+vxdGwB/mjZN5XbcTUUCvyd1WcL/SM5qX24Dan77OIHO55QyBsdaLASyfdwe1rqxTmJx8A==}
     hasBin: true
     dependencies:
       '@babel/cli': 7.17.6_@babel+core@7.17.5
