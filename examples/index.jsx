@@ -31,7 +31,9 @@ export default (
       <section className="container">
         <div className="row">
           <div className="col-sm-4">
-            <button className="load-more">Load More</button>
+            <div>
+              <button className="more">More</button>
+            </div>
             <div>
               <a
                 href={`?p=${curPage - 1}&l=${pageSize}`}
