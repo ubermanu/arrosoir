@@ -21,7 +21,7 @@
   "scripts": {
     "build": "rollup -c && tsc -p tsconfig.json",
     "prepublishOnly": "npm run build",
-    "examples": "php -S localhost:8000 -t examples",
+    "examples": "jhj -S localhost:8000 -t examples",
     "test": "uvu tests"
   },
   "files": [
@@ -29,6 +29,7 @@
     "types/*"
   ],
   "devDependencies": {
+    "jhj": "^0.4.3",
     "prettier": "^2.5.1",
     "rollup": "^2.68.0",
     "rollup-plugin-terser": "^7.0.2",
