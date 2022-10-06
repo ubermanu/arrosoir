@@ -11,35 +11,41 @@
   "author": "ubermanu",
   "license": "MIT",
   "type": "module",
-  "main": "dist/arrosoir.js",
-  "module": "dist/arrosoir.es.js",
-  "types": "types/main.d.mts",
+  "main": "dist/arrosoir.cjs",
+  "module": "dist/arrosoir.mjs",
+  "unpkg": "dist/arrosoir.umd.js",
+  "jsdelivr": "dist/arrosoir.umd.js",
+  "types": "dist/main.d.mts",
   "repository": {
     "type": "git",
     "url": "https://github.com/ubermanu/arrosoir"
   },
   "scripts": {
-    "build": "rollup -c && tsc -p tsconfig.json",
+    "build": "rimraf types && tsc -p tsconfig.json && rollup -c",
     "prepublishOnly": "npm run build",
     "examples": "jhj -S localhost:8000 -t examples",
-    "test": "uvu tests"
+    "test": "uvu -r tests"
   },
   "files": [
     "dist/*",
     "types/*"
   ],
   "devDependencies": {
+    "@ubermanu/eslint-config": "^1.2.0",
+    "eslint": "^8.24.0",
     "jhj": "^0.6.1",
-    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.68.0",
     "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4",
     "uvu": "^0.5.3"
   },
   "exports": {
     ".": {
-      "require": "./dist/arrosoir.js",
-      "import": "./dist/arrosoir.es.js",
-      "default": "./dist/arrosoir.es.js"
+      "require": "./dist/arrosoir.cjs",
+      "import": "./dist/arrosoir.mjs",
+      "default": "./dist/arrosoir.umd.js"
     },
     "./package.json": "./package.json"
   }
