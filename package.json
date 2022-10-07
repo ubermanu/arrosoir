@@ -7,7 +7,7 @@
     "dom",
     "hydration"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "ubermanu",
   "license": "MIT",
   "type": "module",
@@ -15,7 +15,7 @@
   "module": "dist/arrosoir.mjs",
   "unpkg": "dist/arrosoir.umd.js",
   "jsdelivr": "dist/arrosoir.umd.js",
-  "types": "dist/main.d.mts",
+  "types": "types/main.d.mts",
   "repository": {
     "type": "git",
     "url": "https://github.com/ubermanu/arrosoir"
