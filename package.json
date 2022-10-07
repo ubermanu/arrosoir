@@ -7,7 +7,7 @@
     "dom",
     "hydration"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "ubermanu",
   "license": "MIT",
   "type": "module",
@@ -24,7 +24,7 @@
     "build": "rimraf types && tsc -p tsconfig.json && rollup -c",
     "prepublishOnly": "npm run build",
     "examples": "jhj -S localhost:8000 -t examples",
-    "test": "uvu -r tests"
+    "test": "uvu tests"
   },
   "files": [
     "dist/*",
