@@ -1,5 +1,6 @@
 {
   "name": "arrosoir",
+  "version": "1.0.2",
   "description": "A function for basic DOM hydration",
   "keywords": [
     "arrosoir",
@@ -7,40 +8,13 @@
     "dom",
     "hydration"
   ],
-  "version": "1.0.2",
-  "author": "ubermanu",
-  "license": "MIT",
-  "type": "module",
-  "main": "dist/arrosoir.cjs",
-  "module": "dist/arrosoir.mjs",
-  "unpkg": "dist/arrosoir.umd.js",
-  "jsdelivr": "dist/arrosoir.umd.js",
-  "types": "types/main.d.mts",
   "repository": {
     "type": "git",
     "url": "https://github.com/ubermanu/arrosoir"
   },
-  "scripts": {
-    "build": "rimraf types && tsc -p tsconfig.json && rollup -c",
-    "prepublishOnly": "npm run build",
-    "examples": "jhj -S localhost:8000 -t examples",
-    "test": "uvu tests"
-  },
-  "files": [
-    "dist/*",
-    "types/*"
-  ],
-  "devDependencies": {
-    "@ubermanu/eslint-config": "^1.2.0",
-    "eslint": "^8.24.0",
-    "jhj": "^0.6.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.68.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "tslib": "^2.4.0",
-    "typescript": "^4.8.4",
-    "uvu": "^0.5.3"
-  },
+  "license": "MIT",
+  "author": "ubermanu",
+  "type": "module",
   "exports": {
     ".": {
       "require": "./dist/arrosoir.cjs",
@@ -48,5 +22,32 @@
       "default": "./dist/arrosoir.umd.js"
     },
     "./package.json": "./package.json"
+  },
+  "main": "dist/arrosoir.cjs",
+  "jsdelivr": "dist/arrosoir.umd.js",
+  "unpkg": "dist/arrosoir.umd.js",
+  "module": "dist/arrosoir.mjs",
+  "types": "types/main.d.mts",
+  "files": [
+    "dist/*",
+    "types/*"
+  ],
+  "scripts": {
+    "build": "rimraf types && tsc -p tsconfig.json && rollup -c",
+    "examples": "jhj -S localhost:8000 -t examples",
+    "prepublishOnly": "npm run build",
+    "test": "uvu tests"
+  },
+  "prettier": "@ubermanu/prettier-config",
+  "devDependencies": {
+    "@ubermanu/prettier-config": "^3.2.0",
+    "jhj": "^0.6.1",
+    "prettier": "^3.2.4",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.68.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4",
+    "uvu": "^0.5.3"
   }
 }

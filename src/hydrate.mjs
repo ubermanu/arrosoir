@@ -5,8 +5,8 @@ const parser = new DOMParser()
  *
  * @param {string} selector
  * @param {string} url
- * @param {{merge?:string, history?:boolean}} options
- * @return {Promise<void>}
+ * @param {{ merge?: string; history?: boolean }} options
+ * @returns {Promise<void>}
  */
 export default async (selector, url, options = {}) => {
   const element = document.querySelector(selector)

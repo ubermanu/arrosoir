@@ -1,21 +1,17 @@
 /**
- * This example is served using JHJ.
- * Check it out for more information: https://github.com/ubermanu/jhj
+ * This example is served using JHJ. Check it out for more information:
+ * https://github.com/ubermanu/jhj
  */
 
 let curPage = +location.searchParams.get('p') || 0
 let pageSize = +location.searchParams.get('l') || 10
 
-let posts = []
+const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+const posts = await response.json()
 
-for (let i = 0; i < 100; i++) {
-  posts.push({
-    id: i,
-    title: `Post ${i}`
-  })
-}
+let selection = posts.slice((curPage - 1) * pageSize, curPage * pageSize)
 
-let selection = posts.slice(curPage * pageSize, (curPage + 1) * pageSize)
+console.log('selection', curPage, pageSize)
 
 export default (
   <html lang="en">
@@ -35,12 +31,14 @@ export default (
               <button className="more">More</button>
             </div>
             <div>
-              <a
-                href={`?p=${curPage - 1}&l=${pageSize}`}
-                className="button prev"
-              >
-                Previous
-              </a>
+              {curPage > 1 && (
+                <a
+                  href={`?p=${curPage - 1}&l=${pageSize}`}
+                  className="button prev"
+                >
+                  Previous
+                </a>
+              )}
               <a
                 href={`?p=${curPage + 1}&l=${pageSize}`}
                 className="button next"
