@@ -17,6 +17,7 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./types/main.d.mts",
       "require": "./dist/arrosoir.cjs",
       "import": "./dist/arrosoir.mjs",
       "default": "./dist/arrosoir.umd.js"
