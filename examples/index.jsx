@@ -11,8 +11,6 @@ const posts = await response.json()
 
 let selection = posts.slice((curPage - 1) * pageSize, curPage * pageSize)
 
-console.log('selection', curPage, pageSize)
-
 export default (
   <html lang="en">
     <head>
@@ -31,14 +29,12 @@ export default (
               <button className="more">More</button>
             </div>
             <div>
-              {curPage > 1 && (
                 <a
                   href={`?p=${curPage - 1}&l=${pageSize}`}
                   className="button prev"
                 >
                   Previous
                 </a>
-              )}
               <a
                 href={`?p=${curPage + 1}&l=${pageSize}`}
                 className="button next"
